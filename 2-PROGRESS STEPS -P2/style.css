@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  text-align: center;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 30px;
+  width: 430px;
+}
+
+.progress-container::before {
+  content: ''; /*  when use before we have to add this line to see */
+  background-color: rgba(199, 207, 212, 0.856);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.progress {
+  background-color: rgb(26, 151, 223);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 0%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  /*this is the numbers and the circles*/
+  background-color: #fff; /* circle background colour */
+  color: #999; /*the number color*/
+  border-radius: 50%; /*border radious 50% to make circle around the numbers*/
+  height: 30px;
+  width: 30px; /*to make a perfect circle from oval the hight and width have to have the same px*/
+  display: flex;
+  align-items: center;
+  justify-content: center; /*to make the numbers into the center to the circles */
+  border: 3px solid rgba(199, 207, 212, 0.856); /*give the numbers a gray solid border */
+  transition: 0.4s ease; /* helpes to give those circle a smoth transition when the are active and blue */
+}
+
+.circle.active {
+  /* this is when the circle is active */
+  border-color: rgb(
+    26,
+    151,
+    223
+  ); /*gives the border colour blue when it is active*/
+}
+
+.btn {
+  /*this is the button*/
+  background-color: rgb(0, 217, 255); /*button background colour when active*/
+  color: #fff; /*text colour*/
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer; /*when the mouse on the buttons the viev will be mouse pointer*/
+  font-family: inherit; /*inheriting font family from thr body*/
+  font-size: 14px;
+  padding: 8px 30px; /*give padding top and bottom 8px left and right 30px*/
+  margin: 5px;
+}
+.btn:active {
+  /*button when it is active*/
+  transform: scale(
+    0.98
+  ); /*giv a little popuptype animation which button is active */
+}
+
+.btn:focus {
+  /* btn when it is focus give outline 0 on the text*/
+  outline: 0;
+}
+.btn:disabled {
+  /*disabled btn property*/
+  background-color: rgba(
+    199,
+    207,
+    212,
+    0.856
+  ); /*give the background colour of the disabled button*/
+  cursor: not-allowed; /*wii view the cursor not allowed*/
+}
